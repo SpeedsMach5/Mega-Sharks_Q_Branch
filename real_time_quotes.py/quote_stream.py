@@ -1,11 +1,10 @@
-
 import numpy as np
 import pandas as pd
-import tkinter as tk
+import tkinter 
 import yfinance as yf
 import plotly.graph_objs as go
 import requests
-
+import os
 
 def read_tickers():
     with open("dataset/tickers.txt", "r") as file:
