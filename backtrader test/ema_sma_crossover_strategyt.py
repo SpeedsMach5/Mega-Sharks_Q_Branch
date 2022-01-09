@@ -9,16 +9,33 @@ import backtrader as bt
 import backtrader.indicators as btind
 
 
+def EMA():
+    with open("MA_periods.txt", "r") as file:
+        content = file.read()
+        content = content.split("\n")
+        return content
+
+fast_period = EMA() 
+
+def SMA():
+    with open("MA_periods.txt", "r") as file:
+        content = file.read()
+        content = content.split("\n")
+        return content
+
+slow_period = SMA()
+  
+
 class MA_CrossOver(bt.Strategy):
     
     alias = ('SMA_CrossOver',)
 
     params = (
         # period for the fast Moving Average
-        ('fast', 10),
+        ('fast',10),
         # period for the slow moving average
-        ('slow', 30),
-        ('slow', 20),
+        ('slow',30),
+        ('slow',20),
         # moving average to use
         ('_movav', btind.MovAv.SMA)
     )
