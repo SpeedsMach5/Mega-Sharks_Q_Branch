@@ -36,7 +36,7 @@ def get_listbox_data(file_path):
 
 
 # UI FLOW FUNCTIONS
-def run_analysis(ticker, start_date, end_date, period):
+def run_analysis(ticker, start_date, end_date, period, selected_strategies):
     """Runs and displays the different sections of the financial analysis
 
     Any code that needs to be run should have its own function and
@@ -55,13 +55,16 @@ def run_analysis(ticker, start_date, end_date, period):
     
     period: int, required
         Number of periods to run the forecast
+
+    selected_strategies: List, required
+        List of strategies selected by the user. 
     """
 
     display_parameter_section()
     pricing_data = display_ticker_data_section(ticker, start_date, end_date)
     display_forecasting_section(pricing_data, period)
     display_sentiment_indicators_section()
-    display_strategy_section()
+    display_strategy_section(selected_strategies)
 
 
 
@@ -153,11 +156,28 @@ def display_sentiment_indicators_section():
 
 
 
-def display_strategy_section():
+def display_strategy_section(selected_strategies):
+    """Displays the analysis of selected strategies
+
+    The function loops through the strategies the user selected.  An 
+    IF conditional structure has all of the possible supported strategies.
+    
+
+    Parameters
+    ----------
+    selected_strategies: List, required
+        List of strategies the user selected
+    
+    """
     st.subheader("Analysis of Selected Strategies")
     strategy_status = st.info("Loading...")
 
-    #STRATEGY CODE HERE
+    for strategy in selected_strategies:
+        if strategy == 'Moving Averages Crossover':
+            # call module and put presentation logic here 
+            st.write("")
+        elif strategy == 'DMAC':
+            st.write("")
 
     strategy_status.empty()
 
@@ -185,5 +205,5 @@ st.sidebar.button('4. Run Analysis',
     key= 'button_run_analysis',
     help='Click to run analysis.', 
     on_click=run_analysis,
-    args=(ticker_list, START, TODAY, period)
+    args=(ticker_list, START, TODAY, period, strategy_listbox)
 )
