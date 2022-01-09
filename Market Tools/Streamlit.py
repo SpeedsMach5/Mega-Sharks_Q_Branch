@@ -4,6 +4,8 @@ from fbprophet.plot import plot_plotly
 from plotly import graph_objects as go
 import pricing
 import forecasting
+import dmac_strategy
+import holoviews as hv
 
 #CONFIGURATION
 START = "2015-01-01"
@@ -176,8 +178,19 @@ def display_strategy_section(selected_strategies, pricing_data):
         if strategy == 'Moving Averages Crossover':
             # call module and put presentation logic here 
             st.write("")
-        elif strategy == 'DMAC':
-            st.write("")
+        elif strategy == 'Double Moving Average Crossover (DMAC)':
+            st.write(strategy)
+            
+            # Creating the DMAC
+            df, plot = dmac_strategy.analyze_dmac(pricing_data)
+            st.write(df.tail())
+            st.bokeh_chart(hv.render(plot, backend='bokeh'))
+
+            #Backtesting the DMAC
+            st.write("Backtest:")
+            df_backtest, plot = dmac_strategy.backtest_dmac(df)
+            st.write(df_backtest.tail())
+            st.bokeh_chart(hv.render(plot, backend='bokeh'))
 
     strategy_status.empty()
 
