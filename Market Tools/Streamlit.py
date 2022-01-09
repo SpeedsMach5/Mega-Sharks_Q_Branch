@@ -56,10 +56,10 @@ def load_data_for_ticker(tickers, start_date, end_date):
     return data
 
 def run_analysis():
-    """Runs the different sections of the financial analysis
+    """Runs and displays the different sections of the financial analysis
 
     Any code that needs to be run should have its own function and
-    be called from here.  This is the main launch pad
+    be called from here.  This is the main launch pad.  Order matters.
 
     Parameters
     ----------
@@ -76,8 +76,8 @@ def run_analysis():
 
     display_parameter_section()
     data = display_ticker_data_section(ticker_selectbox, START, TODAY)
-    #TODO: display_sentiment_section()
     display_forecasting_section(data)
+    display_sentiment_indicators_section()
 
 
 def display_parameter_section():
@@ -151,6 +151,13 @@ def display_forecasting_section(data):
     st.write(fig2)
     status.empty()
 
+def display_sentiment_indicators_section():
+    st.subheader("Sentiment Indicators")
+    sentiment_status = st.info("Loading...")
+
+    # SENTIMENT CODE HERE
+
+    sentiment_status.empty()
 
 
 # Linear Sidebar UI
