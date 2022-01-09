@@ -56,9 +56,27 @@ def load_data_for_ticker(tickers, start_date, end_date):
     return data
 
 def run_analysis():
+    """Runs the different sections of the financial analysis
+
+    Any code that needs to be run should have its own function and
+    be called from here.  This is the main launch pad
+
+    Parameters
+    ----------
+    tickers: str, required
+        A list of ticker symbols
+    
+    start_date: str, required
+        Download start date string (YYYY-MM-DD) or _datetime
+    
+    end_date: str, required
+        Download end date string (YYYY-MM-DD) or _datetime.
+    
+    """
+
     display_parameter_section()
     data = display_ticker_data_section(ticker_selectbox, START, TODAY)
-    #display_sentiments()
+    #TODO: display_sentiment_section()
     display_forecasting_section(data)
 
 
@@ -72,18 +90,49 @@ def display_parameter_section():
     st.markdown('- Strategies: ' + str(strategy_listbox))
     st.markdown('- Prediction days: ' + str(n_day))
 
-def display_ticker_data_section(tickers, start_date, end_date):
-    st.subheader("Ticker Data: Last 5 Closes")
+#@st.cache(suppress_st_warning=True)
+def display_ticker_data_section(tickers, start_date, end_date, tail_records=5):
+    """Retrieves and displays the Open, High, Low, Close prices 
+    
+    Retrieves and displays the Open, High, Low, and Close prices for the last
+    X records in the DataFrame.
+
+    Parameters
+    ----------
+    tickers: str, required
+        A list of ticker symbols
+    
+    start_date: str, required
+        Download start date string (YYYY-MM-DD) or _datetime
+    
+    end_date: str, required
+        Download end date string (YYYY-MM-DD) or _datetime.
+    
+    tail_records: int, optional (Default = 5)
+        Specifies the number of records to display
+
+    """
+
+    st.subheader(f"Ticker Data: Last {tail_records} Closes")
     status = st.info("Loading...")
     data = load_data_for_ticker(ticker_selectbox, start_date, end_date)
     status.empty()
-    st.write(data.tail())
+    st.write(data.tail(tail_records))
     return data
 
+#@st.cache(suppress_st_warning=True)
 def display_forecasting_section(data):
-    st.subheader("Forecasting: Probable outcome, not an actual crystal ball")
-    status = st.info("Loading")
-    # Forecasting
+    """Displays forecasting data
+
+    Parameters
+    ----------
+    data: DataFrame, required
+        Open, High, Low, Close data for a ticker
+    
+    """
+    st.subheader("Forecasting")
+    status = st.info("Loading...")
+
     df_train = data[["Date", "Close"]]
     df_train = df_train.rename(columns={"Date":"ds", "Close": "y"})
 
@@ -92,16 +141,16 @@ def display_forecasting_section(data):
     future = m.make_future_dataframe(periods=period, freq='D')
     forecast = m.predict(future)
 
+    st.warning("Note: These are probable outcomes, not an actual crystal ball")
     st.write(forecast.tail())
 
-    #st.write("Forecast Data")
     fig1 = plot_plotly(m, forecast)
     st.plotly_chart(fig1)
 
-    #st.write("Forecast Data")
     fig2 = m.plot_components(forecast)
     st.write(fig2)
     status.empty()
+
 
 
 # Linear Sidebar UI
@@ -121,5 +170,3 @@ period = n_day*10
 st.sidebar.markdown('____')
 
 st.sidebar.button('4. Run Analysis',help='Click to run analysis.', on_click=run_analysis)
-
-# Main area
