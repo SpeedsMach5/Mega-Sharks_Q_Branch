@@ -4,3 +4,6 @@ pandas
 yfinance
 plotly
 requests
+datetime
+dateutil.relativedelta
+botocore.vendored
