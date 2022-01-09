@@ -1,6 +1,6 @@
-import fear_and_greed
-
-fear_and_greed.get()
+import fear_and_greed #as fear_and_greed
+import datetime as dt
+FearGreed.get()
 
 FearGreedIndex(
     value=58,
