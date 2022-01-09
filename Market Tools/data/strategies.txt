@@ -1,0 +1,5 @@
+Moving Averages Crossover
+Buy Low Sell High
+Bollinger Band Strategy
+Ichimoku Cloud
+DMAC
