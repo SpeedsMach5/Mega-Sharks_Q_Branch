@@ -2,9 +2,19 @@ import streamlit as st
 from datetime import date
 from fbprophet.plot import plot_plotly
 from plotly import graph_objects as go
+<<<<<<< HEAD:Market Tools/data/Streamlit.py
 import pricing 
 import forecasting 
 import EMA_SMA_Crossover 
+=======
+import pricing
+import forecasting
+import dmac_strategy
+import ema_sma_crossover_strategy as ema_sma
+import holoviews as hv
+import macd_strategy
+import matplotlib
+>>>>>>> 8c08dea8ac33be388268ca2ae4962a76544bb3c3:Market Tools/Streamlit.py
 
 #CONFIGURATION
 START = "2015-01-01"
@@ -177,11 +187,54 @@ def display_strategy_section(selected_strategies, pricing_data):
         if strategy == 'Moving Averages Crossover':
             # call module and put presentation logic here 
             st.write("")
+<<<<<<< HEAD:Market Tools/data/Streamlit.py
         elif strategy == 'DMAC':
             st.write("")
         elif strategy == "EMA_SMA Crossover":
 
             strategy_status.empty()
+=======
+        elif strategy == 'Double Moving Average Crossover (DMAC)':
+            st.write('__' + strategy + '__')
+            
+            # Creating the DMAC
+            df, plot = dmac_strategy.analyze_dmac(pricing_data)
+            st.write(df.tail())
+            st.bokeh_chart(hv.render(plot, backend='bokeh'))
+
+            #Backtesting the DMAC
+            st.write("__ DMAC Backtest:__")
+            df_backtest, plot = dmac_strategy.backtest_dmac(df)
+            st.write(df_backtest.tail(1))
+            st.bokeh_chart(hv.render(plot, backend='bokeh'))
+        elif strategy == 'EMA SMA Crossover':
+            st.write('__' + strategy + '__')
+
+            df, results, plot = ema_sma.analyze_ema_sma_crossover(pricing_data)
+            st.write(df.tail())
+
+            st.write('Backtest:')
+            st.write(f'Beginning balance: ${results[0]:,.2f}')
+            st.write(f'Ending balance: ${results[1]:,.2f}')
+
+            st.pyplot(plot)
+
+        elif strategy == "Moving Average Convergence/Divergence (MACD)":
+            st.write(strategy)
+
+            # Creating the MACD
+            df, plot = macd_strategy.analyze_macd(pricing_data)
+            st.write(df.tail())
+            st.bokeh_chart(hv.render(plot, backend='bokeh'))
+
+            # Backtesting the MACD
+            st.write("__MACD Backtest:__")
+            df_backtest, plot = macd_strategy.backtest_macd(df)
+            st.write(df_backtest.tail(1))
+            st.bokeh_chart(hv.render(plot, backend="bokeh"))
+
+    strategy_status.empty()
+>>>>>>> 8c08dea8ac33be388268ca2ae4962a76544bb3c3:Market Tools/Streamlit.py
 
 
 
