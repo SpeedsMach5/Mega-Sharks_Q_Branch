@@ -6,6 +6,7 @@ import pricing
 import forecasting
 import dmac_strategy
 import holoviews as hv
+import macd_strategy
 
 #CONFIGURATION
 START = "2015-01-01"
@@ -191,6 +192,17 @@ def display_strategy_section(selected_strategies, pricing_data):
             df_backtest, plot = dmac_strategy.backtest_dmac(df)
             st.write(df_backtest.tail(1))
             st.bokeh_chart(hv.render(plot, backend='bokeh'))
+
+        elif strategy == "Moving Average Convergence/Divergence (MACD)":
+            st.write(strategy)
+
+            # Creating the MACD
+            df, plot = macd_strategy.analyze_macd(pricing_data)
+            st.write(df.tail())
+            st.bokeh_chart(hv.render(plot, backend='bokeh'))
+
+            # Backtesting the MACD
+            st.write("__Backtest:__")
 
     strategy_status.empty()
 
