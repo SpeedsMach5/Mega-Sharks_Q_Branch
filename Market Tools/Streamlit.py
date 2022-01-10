@@ -65,7 +65,7 @@ def run_analysis(ticker, start_date, end_date, period, selected_strategies):
 
     display_parameter_section()
     pricing_data = display_ticker_data_section(ticker, start_date, end_date)
-    #display_forecasting_section(pricing_data, period)
+    display_forecasting_section(pricing_data, period)
     display_sentiment_indicators_section(pricing_data)
     display_strategy_section(selected_strategies, pricing_data)
 
