@@ -25,7 +25,7 @@ class tslaPutCallFearGreedVixData(bt.feeds.GenericCSVData):
 
 
 class PutCallData(bt.feeds.GenericCSVData):
-    lines = ('put_call', ) 
+    #lines = ('put_call', ) 
     params = (
         ('dtformat', '%m/%d/%Y'),
         ('date', 0),
@@ -36,7 +36,7 @@ class PutCallData(bt.feeds.GenericCSVData):
 
 
 class FearGreedData(bt.feeds.GenericCSVData):
-    lines = ('fear_greed', )
+    #lines = ('fear_greed', )
     params = (
         ('dtformat', '%m/%d/%Y'),
         ('date', 0),
@@ -47,7 +47,7 @@ class FearGreedData(bt.feeds.GenericCSVData):
 
 
 class VIXData(bt.feeds.GenericCSVData):
-    lines = ('vix', )
+    #lines = ('vix', )
     params = (
         ('dtformat', '%m/%d/%Y'),
         ('date', 0),
