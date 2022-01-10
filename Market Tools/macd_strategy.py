@@ -38,7 +38,7 @@ def analyze_macd(signals_df:DataFrame):
   signals_df["Entry/Exit"] = signals_df["Signal"].diff()
 
   # Review the DataFrame
-  signals_df.loc["2015-12-03":"2015-12-13"]
+  # signals_df.loc["2015-12-03":"2015-12-13"]
 
   # Visualize exit position relative to close price
   exit = signals_df[signals_df['Entry/Exit'] == -1.0]['Close'].hvplot.scatter(

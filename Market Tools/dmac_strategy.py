@@ -24,7 +24,7 @@ def analyze_dmac(signals_df:DataFrame):
     signals_df["Entry/Exit"] = signals_df["Signal"].diff()
 
     # Review the DataFrame
-    signals_df.loc["2015-12-03":"2015-12-13"]
+    # signals_df.loc["2015-12-03":"2015-12-13"]
 
     exit = signals_df[signals_df['Entry/Exit'] == -1.0]['Close'].hvplot.scatter(
         color="yellow",
