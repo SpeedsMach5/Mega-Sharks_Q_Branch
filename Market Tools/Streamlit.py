@@ -7,6 +7,7 @@ import forecasting
 import dmac_strategy
 import ema_sma_crossover_strategy as ema_sma
 import holoviews as hv
+import macd_strategy
 import matplotlib
 
 #CONFIGURATION
@@ -190,9 +191,9 @@ def display_strategy_section(selected_strategies, pricing_data):
             st.bokeh_chart(hv.render(plot, backend='bokeh'))
 
             #Backtesting the DMAC
-            st.write("Backtest:")
+            st.write("__ DMAC Backtest:__")
             df_backtest, plot = dmac_strategy.backtest_dmac(df)
-            st.write(df_backtest.tail())
+            st.write(df_backtest.tail(1))
             st.bokeh_chart(hv.render(plot, backend='bokeh'))
         elif strategy == 'EMA SMA Crossover':
             st.write('__' + strategy + '__')
@@ -205,6 +206,20 @@ def display_strategy_section(selected_strategies, pricing_data):
             st.write(f'Ending balance: ${results[1]:,.2f}')
 
             st.pyplot(plot)
+
+        elif strategy == "Moving Average Convergence/Divergence (MACD)":
+            st.write(strategy)
+
+            # Creating the MACD
+            df, plot = macd_strategy.analyze_macd(pricing_data)
+            st.write(df.tail())
+            st.bokeh_chart(hv.render(plot, backend='bokeh'))
+
+            # Backtesting the MACD
+            st.write("__MACD Backtest:__")
+            df_backtest, plot = macd_strategy.backtest_macd(df)
+            st.write(df_backtest.tail(1))
+            st.bokeh_chart(hv.render(plot, backend="bokeh"))
 
     strategy_status.empty()
 
