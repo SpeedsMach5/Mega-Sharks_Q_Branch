@@ -2,15 +2,15 @@ import streamlit as st
 from datetime import date
 from fbprophet.plot import plot_plotly
 from plotly import graph_objects as go
-import pricing
-import forecasting
-from data import EMA_SMA_Crossover
+import pricing 
+import forecasting 
+import EMA_SMA_Crossover 
 
 #CONFIGURATION
 START = "2015-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
-TICKER_LIST_PATH = 'data/constituents_symbols.txt'
-STRATEGY_LIST_PATH = 'data/strategies.txt'
+TICKER_LIST_PATH = 'constituents_symbols.txt'
+STRATEGY_LIST_PATH = 'strategies.txt'
 
 status = st.text("")
 
@@ -179,8 +179,9 @@ def display_strategy_section(selected_strategies, pricing_data):
             st.write("")
         elif strategy == 'DMAC':
             st.write("")
+        elif strategy == "EMA_SMA Crossover":
 
-    strategy_status.empty()
+            strategy_status.empty()
 
 
 

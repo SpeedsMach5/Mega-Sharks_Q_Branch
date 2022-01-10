@@ -2,5 +2,6 @@ Moving Averages Crossover
 Buy Low Sell High
 Bollinger Band Strategy
 Ichimoku Cloud
-DMAC
+Double Moving Average Crossover (DMAC)
+Moving Average Convergence/Divergence (MACD)
 EMA_SMA Crossover
