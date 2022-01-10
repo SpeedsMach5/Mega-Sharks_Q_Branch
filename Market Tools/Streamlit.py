@@ -5,14 +5,17 @@ from plotly import graph_objects as go
 import pricing
 import forecasting
 import dmac_strategy
+import ema_sma_crossover_strategy as ema_sma
 import holoviews as hv
 import macd_strategy
+import matplotlib
 
 #CONFIGURATION
 START = "2015-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
 TICKER_LIST_PATH = 'data/constituents_symbols.txt'
 STRATEGY_LIST_PATH = 'data/strategies.txt'
+matplotlib.use('Agg')
 
 status = st.text("")
 
@@ -180,7 +183,7 @@ def display_strategy_section(selected_strategies, pricing_data):
             # call module and put presentation logic here 
             st.write("")
         elif strategy == 'Double Moving Average Crossover (DMAC)':
-            st.write(strategy)
+            st.write('__' + strategy + '__')
             
             # Creating the DMAC
             df, plot = dmac_strategy.analyze_dmac(pricing_data)
@@ -192,6 +195,17 @@ def display_strategy_section(selected_strategies, pricing_data):
             df_backtest, plot = dmac_strategy.backtest_dmac(df)
             st.write(df_backtest.tail(1))
             st.bokeh_chart(hv.render(plot, backend='bokeh'))
+        elif strategy == 'EMA SMA Crossover':
+            st.write('__' + strategy + '__')
+
+            df, results, plot = ema_sma.analyze_ema_sma_crossover(pricing_data)
+            st.write(df.tail())
+
+            st.write('Backtest:')
+            st.write(f'Beginning balance: ${results[0]:,.2f}')
+            st.write(f'Ending balance: ${results[1]:,.2f}')
+
+            st.pyplot(plot)
 
         elif strategy == "Moving Average Convergence/Divergence (MACD)":
             st.write(strategy)

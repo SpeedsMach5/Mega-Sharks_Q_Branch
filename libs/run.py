@@ -10,7 +10,7 @@ class tslaPutCallFearGreedVixData(bt.feeds.GenericCSVData):
     lines = ('put_call', 'fear_greed', 'vix')
 
     params = (
-        ('dtformat', '%Y-%m-%d'),
+        ('dtformat', '%m/%d/%Y'),
         ('date', 0),
         ('open', 1),
         ('high', 2),
@@ -25,9 +25,9 @@ class tslaPutCallFearGreedVixData(bt.feeds.GenericCSVData):
 
 
 class PutCallData(bt.feeds.GenericCSVData):
-
+    lines = ('put_call', ) 
     params = (
-        ('dtformat', '%Y-%m-%d'),
+        ('dtformat', '%m/%d/%Y'),
         ('date', 0),
         ('put_call', 4),
         ('volume', -1),
@@ -36,9 +36,9 @@ class PutCallData(bt.feeds.GenericCSVData):
 
 
 class FearGreedData(bt.feeds.GenericCSVData):
-
+    lines = ('fear_greed', )
     params = (
-        ('dtformat', '%Y-%m-%d'),
+        ('dtformat', '%m/%d/%Y'),
         ('date', 0),
         ('fear_greed', 4),
         ('volume', -1),
@@ -47,9 +47,9 @@ class FearGreedData(bt.feeds.GenericCSVData):
 
 
 class VIXData(bt.feeds.GenericCSVData):
-
+    lines = ('vix', )
     params = (
-        ('dtformat', '%Y-%m-%d'),
+        ('dtformat', '%m/%d/%Y'),
         ('date', 0),
         ('vix', 4),
         ('volume', -1),
@@ -72,8 +72,8 @@ cerebro.adddata(fearGreedFeed)
 cerebro.adddata(vixFeed)
 
 cerebro.addstrategy(FearGreedStrategy)
-#cerebro.addstrategy(PutCallStrategy)
-#cerebro.addstrategy(VIXStrategy)
+cerebro.addstrategy(PutCallStrategy)
+cerebro.addstrategy(VIXStrategy)
 
 cerebro.run()
 cerebro.plot(volume=False)
