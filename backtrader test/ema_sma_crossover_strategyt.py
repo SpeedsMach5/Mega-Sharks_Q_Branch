@@ -7,7 +7,7 @@ from __future__ import (absolute_import, division, print_function,
 
 import backtrader as bt
 import backtrader.indicators as btind
-import matplotlib.pyplot as plt 
+
 
 def EMA():
     with open("MA_periods.txt", "r") as file:
@@ -54,3 +54,4 @@ class MA_CrossOver(bt.Strategy):
         elif self.buysig > 0:
             self.buy()
 
+    

@@ -2,11 +2,6 @@ import streamlit as st
 from datetime import date
 from fbprophet.plot import plot_plotly
 from plotly import graph_objects as go
-<<<<<<< HEAD:Market Tools/data/Streamlit.py
-import pricing 
-import forecasting 
-import EMA_SMA_Crossover 
-=======
 import pricing
 import forecasting
 import dmac_strategy
@@ -14,13 +9,13 @@ import ema_sma_crossover_strategy as ema_sma
 import holoviews as hv
 import macd_strategy
 import matplotlib
->>>>>>> 8c08dea8ac33be388268ca2ae4962a76544bb3c3:Market Tools/Streamlit.py
 
 #CONFIGURATION
 START = "2015-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
-TICKER_LIST_PATH = 'constituents_symbols.txt'
-STRATEGY_LIST_PATH = 'strategies.txt'
+TICKER_LIST_PATH = 'data/constituents_symbols.txt'
+STRATEGY_LIST_PATH = 'data/strategies.txt'
+matplotlib.use('agg')
 
 status = st.text("")
 
@@ -187,13 +182,6 @@ def display_strategy_section(selected_strategies, pricing_data):
         if strategy == 'Moving Averages Crossover':
             # call module and put presentation logic here 
             st.write("")
-<<<<<<< HEAD:Market Tools/data/Streamlit.py
-        elif strategy == 'DMAC':
-            st.write("")
-        elif strategy == "EMA_SMA Crossover":
-
-            strategy_status.empty()
-=======
         elif strategy == 'Double Moving Average Crossover (DMAC)':
             st.write('__' + strategy + '__')
             
@@ -234,7 +222,6 @@ def display_strategy_section(selected_strategies, pricing_data):
             st.bokeh_chart(hv.render(plot, backend="bokeh"))
 
     strategy_status.empty()
->>>>>>> 8c08dea8ac33be388268ca2ae4962a76544bb3c3:Market Tools/Streamlit.py
 
 
 

@@ -1,7 +1,3 @@
-Moving Averages Crossover
-Buy Low Sell High
-Bollinger Band Strategy
-Ichimoku Cloud
 Double Moving Average Crossover (DMAC)
 Moving Average Convergence/Divergence (MACD)
-EMA_SMA Crossover
+EMA SMA Crossover
