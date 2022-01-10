@@ -3,3 +3,4 @@ Buy Low Sell High
 Bollinger Band Strategy
 Ichimoku Cloud
 DMAC
+EMA_SMA Crossover

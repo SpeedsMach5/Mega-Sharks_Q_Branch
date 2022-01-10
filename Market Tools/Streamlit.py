@@ -4,6 +4,7 @@ from fbprophet.plot import plot_plotly
 from plotly import graph_objects as go
 import pricing
 import forecasting
+from data import EMA_SMA_Crossover
 
 #CONFIGURATION
 START = "2015-01-01"
