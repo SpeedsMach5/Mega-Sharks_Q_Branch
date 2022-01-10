@@ -188,7 +188,7 @@ def display_strategy_section(selected_strategies, pricing_data):
             st.bokeh_chart(hv.render(plot, backend='bokeh'))
 
             #Backtesting the DMAC
-            st.write("__Backtest:__")
+            st.write("__ DMAC Backtest:__")
             df_backtest, plot = dmac_strategy.backtest_dmac(df)
             st.write(df_backtest.tail(1))
             st.bokeh_chart(hv.render(plot, backend='bokeh'))
@@ -202,7 +202,10 @@ def display_strategy_section(selected_strategies, pricing_data):
             st.bokeh_chart(hv.render(plot, backend='bokeh'))
 
             # Backtesting the MACD
-            st.write("__Backtest:__")
+            st.write("__MACD Backtest:__")
+            df_backtest, plot = macd_strategy.backtest_macd(df)
+            st.write(df_backtest.tail(1))
+            st.bokeh_chart(hv.render(plot, backend="bokeh"))
 
     strategy_status.empty()
 

@@ -121,7 +121,7 @@ def backtest_dmac(signals_df):
     # Overlay the plots
     portfolio_entry_exit_plot = total_portfolio_value * entry * exit
     portfolio_entry_exit_plot.opts(
-        title="Apple Algorithm - Total Portfolio Value",
+        title="Total Portfolio Value",
         yformatter='%.0f'
     )
 

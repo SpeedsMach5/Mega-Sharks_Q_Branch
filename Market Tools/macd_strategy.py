@@ -81,3 +81,64 @@ def backtest_macd(signals_df):
 
   # Set the share size
   share_size = 500
+
+  # Buy a 500 share position when the dual moving average crossover Signal equals 1 (SMA50 is greater than SMA100)
+  # Sell a 500 share position when the dual moving average crossover Signal equals 0 (SMA50 is less than SMA100)
+  signals_df['Position'] = share_size * signals_df['Signal']
+
+  # Determine the points in time where a 500 share position is bought or sold
+  signals_df['Entry/Exit Position'] = signals_df['Position'].diff()
+
+  # Multiply the close price by the number of shares held, or the Position
+  signals_df['Portfolio Holdings'] = signals_df.Close * signals_df['Position']
+
+  # Subtract the amount of either the cost or proceeds of the trade from the initial capital invested
+  signals_df['Portfolio Cash'] = initial_capital - (signals_df.Close * signals_df['Entry/Exit Position']).cumsum()
+
+  # Calculate the total portfolio value by adding the portfolio cash to the portfolio holdings (or investments)
+  signals_df['Portfolio Total'] = signals_df['Portfolio Cash'] + signals_df['Portfolio Holdings']
+
+  # Calculate the portfolio daily returns
+  signals_df['Portfolio Daily Returns'] = signals_df['Portfolio Total'].pct_change()
+
+  # Calculate the portfolio cumulative returns
+  signals_df['Portfolio Cumulative Returns'] = (1 + signals_df['Portfolio Daily Returns']).cumprod() - 1
+
+  # Visualize exit position relative to total portfolio value
+  exit = signals_df[signals_df['Entry/Exit'] == -1.0]['Portfolio Total'].hvplot.scatter(
+      color='yellow',
+      marker='v',
+      size=200,
+      legend=False,
+      ylabel='Total Portfolio Value',
+      width=1000,
+      height=400
+  )
+
+  # Visualize entry position relative to total portfolio value
+  entry = signals_df[signals_df['Entry/Exit'] == 1.0]['Portfolio Total'].hvplot.scatter(
+      color='purple',
+      marker='^',
+      size=200,
+      ylabel='Total Portfolio Value',
+      width=1000,
+      height=400
+  )
+
+  # Visualize the value of the total portfolio
+  total_portfolio_value = signals_df[['Portfolio Total']].hvplot(
+      line_color='lightgray',
+      ylabel='Total Portfolio Value',
+      xlabel='Date',
+      width=1000,
+      height=400
+  )
+
+  # Overlay the plots
+  portfolio_entry_exit_plot = total_portfolio_value * entry * exit
+  portfolio_entry_exit_plot.opts(
+      title="Total Portfolio Value",
+      yformatter='%.0f'
+  )
+
+  return signals_df[["Portfolio Total", "Portfolio Cumulative Returns"]], portfolio_entry_exit_plot
