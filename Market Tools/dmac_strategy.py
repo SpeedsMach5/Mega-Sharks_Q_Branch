@@ -125,4 +125,4 @@ def backtest_dmac(signals_df):
         yformatter='%.0f'
     )
 
-    return signals_df, portfolio_entry_exit_plot
+    return signals_df[["Portfolio Total", "Portfolio Cumulative Returns"]], portfolio_entry_exit_plot

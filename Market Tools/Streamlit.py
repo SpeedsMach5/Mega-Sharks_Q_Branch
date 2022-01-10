@@ -64,7 +64,7 @@ def run_analysis(ticker, start_date, end_date, period, selected_strategies):
 
     display_parameter_section()
     pricing_data = display_ticker_data_section(ticker, start_date, end_date)
-    display_forecasting_section(pricing_data, period)
+    #display_forecasting_section(pricing_data, period)
     display_sentiment_indicators_section(pricing_data)
     display_strategy_section(selected_strategies, pricing_data)
 
@@ -187,9 +187,9 @@ def display_strategy_section(selected_strategies, pricing_data):
             st.bokeh_chart(hv.render(plot, backend='bokeh'))
 
             #Backtesting the DMAC
-            st.write("Backtest:")
+            st.write("__Backtest:__")
             df_backtest, plot = dmac_strategy.backtest_dmac(df)
-            st.write(df_backtest.tail())
+            st.write(df_backtest.tail(1))
             st.bokeh_chart(hv.render(plot, backend='bokeh'))
 
     strategy_status.empty()
