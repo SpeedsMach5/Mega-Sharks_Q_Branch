@@ -53,7 +53,24 @@ To verify installation, run the following code in your git terminal:
 pip list streamlit
 ```
 
-You should then look through all of the items in the library to make sure you have streamlit installed:
+Verify installation:
 
 ![Streamlit List](images/streamlit_list.png)
 
+This package installed version 1.3.1
+
+Next, to install DateTime, run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+
+```python
+pip install DateTime
+```
+
+The next package to install is FB Prophet. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+
+```python
+pip install fbprophet
+```
+
+Verify installation:
+
+![FBProphet List](images/fbprophet_list.png)
