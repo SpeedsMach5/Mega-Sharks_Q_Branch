@@ -55,5 +55,5 @@ pip list streamlit
 
 You should then look through all of the items in the library to make sure you have streamlit installed:
 
-![Streamlit List](streamlit_list.png)
+![Streamlit List](images/streamlit_list.png)
 
