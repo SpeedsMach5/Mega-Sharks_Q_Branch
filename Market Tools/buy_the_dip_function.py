@@ -10,11 +10,11 @@ import matplotlib
 matplotlib.use('agg')
 
 def buy_the_dip(pricing_data:DataFrame):
-    pricing_data.set_index('Date', inplace=True)
+    df = pricing_data.set_index('Date')
     cerebro = bt.Cerebro()
 
     cerebro.addstrategy(MA_CrossOver)
-    data = bt.feeds.PandasData(dataname=pricing_data)
+    data = bt.feeds.PandasData(dataname=df)
     cerebro.adddata(data)
     cerebro.broker.set_cash(100000)
     cerebro.addsizer(bt.sizers.FixedSize, stake=1000)
@@ -24,4 +24,4 @@ def buy_the_dip(pricing_data:DataFrame):
     ending_balance = float(cerebro.broker.getvalue())
     plot = cerebro.plot()[0][0]
 
-    return pricing_data, [beginning_balance, ending_balance], plot
+    return df, [beginning_balance, ending_balance], plot
