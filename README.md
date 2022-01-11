@@ -35,4 +35,25 @@ built on top of the Python programming language.<br>
 
 **[Backtrader Library](https://www.backtrader.com/)** - backtrader allows you to focus on writing reusable trading strategies, indicators and analyzers instead of having to spend time building infrastructure.<br>
 
+---
+
+## Installation Guide
+
+Before running the application first install the following dependencies:
+
+To install Streamlit, run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+
+```python
+pip install streamlit
+```
+
+To verify installation, run the following code in your git terminal:
+
+```python
+pip list streamlit
+```
+
+You should then look through all of the items in the library to make sure you have streamlit installed:
+
+![pip list streamlit](./images/streamlit.png)
 
