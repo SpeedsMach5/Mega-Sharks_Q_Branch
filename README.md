@@ -90,3 +90,17 @@ conda list plotly
 ```
 
 ![Plotyly List](images/plotly_list.png)
+
+The next package to install is holoviews. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+
+```python
+pip install holoviews
+```
+
+Verify installation by running the following command in your terminal:
+
+```python
+conda list holoviews
+```
+
+![Holoviews List](images/holoviews_list.png)
