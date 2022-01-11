@@ -9,7 +9,7 @@ import ema_sma_crossover_strategy as ema_sma
 import holoviews as hv
 import macd_strategy
 import matplotlib
-import buy_the_dip
+import buy_the_dip_function as bd
 
 #CONFIGURATION
 START = "2015-01-01"
@@ -196,9 +196,11 @@ def display_strategy_section(selected_strategies, pricing_data):
             df_backtest, plot = dmac_strategy.backtest_dmac(df)
             st.write(df_backtest.tail(1))
             st.bokeh_chart(hv.render(plot, backend='bokeh'))
+
         elif strategy == 'EMA SMA Crossover':
             st.write('__' + strategy + '__')
-
+            
+            # Backtesting the EMA SMA crossover
             df, results, plot = ema_sma.analyze_ema_sma_crossover(pricing_data)
             st.write(df.tail())
 
@@ -221,6 +223,20 @@ def display_strategy_section(selected_strategies, pricing_data):
             df_backtest, plot = macd_strategy.backtest_macd(df)
             st.write(df_backtest.tail(1))
             st.bokeh_chart(hv.render(plot, backend="bokeh"))
+
+        elif strategy == "Buy the Dip":
+
+            # Creating Buy the Dip
+            st.write('__Buy The Dip __')            
+            df, results, plot = bd.buy_the_dip(pricing_data)
+            st.write(df.tail())
+            
+            # Backtesting Buy the Dip
+            st.write('Backtest:')
+            st.write(f'Beginning balance: ${results[0]:,.2f}')
+            st.write(f'Ending balance: ${results[1]:,.2f}')
+            
+            st.pyplot(plot)
 
     strategy_status.empty()
 
