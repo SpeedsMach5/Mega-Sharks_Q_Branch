@@ -10,7 +10,7 @@ import backtrader.indicators as btind
 
 
 def EMA():
-    with open("MA_periods.txt", "r") as file:
+    with open("data/MA_periods.txt", "r") as file:
         content = file.read()
         content = content.split("\n")
         return content
@@ -18,7 +18,7 @@ def EMA():
 fast_period = EMA() 
 
 def SMA():
-    with open("MA_periods.txt", "r") as file:
+    with open("data/MA_periods.txt", "r") as file:
         content = file.read()
         content = content.split("\n")
         return content

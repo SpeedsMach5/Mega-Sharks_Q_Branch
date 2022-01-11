@@ -7,7 +7,7 @@ from datetime import date
 from pandas.core.frame import DataFrame
 import yfinance as yf
 import os
-import data.pricing as pricing
+import pricing
 
 def analyze_dmac(signals_df:DataFrame):
     short_window = 50
