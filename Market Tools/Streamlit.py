@@ -9,6 +9,7 @@ import ema_sma_crossover_strategy as ema_sma
 import holoviews as hv
 import macd_strategy
 import matplotlib
+import buy_the_dip
 
 #CONFIGURATION
 START = "2015-01-01"
