@@ -55,5 +55,5 @@ pip list streamlit
 
 You should then look through all of the items in the library to make sure you have streamlit installed:
 
-![pip list streamlit](../images/streamlit.png)
+![pip list streamlit]('Market Tools'/images/streamlit.png)
 
