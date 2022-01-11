@@ -74,3 +74,19 @@ pip install fbprophet
 Verify installation:
 
 ![FBProphet List](images/fbprophet_list.png)
+
+This package installed version 0.7.1
+
+Next, we need to install the plotly package. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+
+```python
+pip install plotly
+```
+
+Verify installation by running the following command in your terminal:
+
+```python
+conda list plotly
+```
+
+![Plotyly List](images/plotly_list.png)
