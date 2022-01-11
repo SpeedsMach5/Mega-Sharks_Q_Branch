@@ -17,7 +17,7 @@ def buy_the_dip(pricing_data:DataFrame):
     data = bt.feeds.PandasData(dataname=pricing_data)
     cerebro.adddata(data)
     cerebro.broker.set_cash(100000)
-    cerebro.addsizer(bt.sizers.FixedSize, stake=1000)
+    cerebro.addsizer(bt.sizers.FixedSize, stake=500)
 
     beginning_balance = float(cerebro.broker.getvalue())
     cerebro.run()
