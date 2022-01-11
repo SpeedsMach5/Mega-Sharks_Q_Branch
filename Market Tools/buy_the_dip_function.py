@@ -9,7 +9,7 @@ from datetime import date
 import matplotlib
 matplotlib.use('agg')
 
-def analyze_ema_sma_crossover(pricing_data:DataFrame):
+def buy_the_dip(pricing_data:DataFrame):
     df = pricing_data.set_index('Date')
     cerebro = bt.Cerebro()
 
