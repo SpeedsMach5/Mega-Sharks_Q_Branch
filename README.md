@@ -146,3 +146,31 @@ conda list pandas
 ```
 
 ![pandas List](images/pandas_list.png)
+
+The next package to install is numpy. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+
+```python
+pip install hvplot
+```
+
+Verify installation by running the following command in your terminal:
+
+```python
+conda list hvplot
+```
+
+![hvplot List](images/hvplot_list.png)
+
+The next package to install is numpy. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+
+```python
+pip install pathlib
+```
+
+Verify installation by running the following command in your terminal:
+
+```python
+conda list pathlib
+```
+
+![pathlib List](images/pathlib_list.png)
