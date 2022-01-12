@@ -118,3 +118,31 @@ conda list matplotlib
 ```
 
 ![matplotlib List](images/matplotlib_list.png)
+
+The next package to install is numpy. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+
+```python
+pip install numpy
+```
+
+Verify installation by running the following command in your terminal:
+
+```python
+conda list numpy
+```
+
+![numpy List](images/numpy_list.png)
+
+The next package to install is numpy. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+
+```python
+pip install pandas
+```
+
+Verify installation by running the following command in your terminal:
+
+```python
+conda list pandas
+```
+
+![pandas List](images/pandas_list.png)
