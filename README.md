@@ -1,5 +1,5 @@
 # Stock Forecaster and Strategy Analyzer
-Forescast future prices of securities using Facebook Prophet and Analyze different trading strategies using backtesting.
+Forecast future prices of securities using Facebook Prophet and analyze different trading strategies using backtesting.
 
 ---
 
@@ -133,7 +133,7 @@ conda list numpy
 
 ![numpy List](images/numpy_list.png)
 
-The next package to install is numpy. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+The next package to install is pandas. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
 
 ```python
 pip install pandas
@@ -147,7 +147,7 @@ conda list pandas
 
 ![pandas List](images/pandas_list.png)
 
-The next package to install is numpy. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+The next package to install is hvplot. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
 
 ```python
 pip install hvplot
@@ -161,7 +161,7 @@ conda list hvplot
 
 ![hvplot List](images/hvplot_list.png)
 
-The next package to install is numpy. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+The next package to install is pathlib. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
 
 ```python
 pip install pathlib
@@ -267,7 +267,7 @@ Step 9: Review the separate component charts:
 
 ![FBProphet Components](images/fbprophet_components.png)
 
-As we can see from the charts, TSLA stock really spiked during and after 2020. Historically, we see that TSLA stock tends to increase during the weekend, and it slides beginning on Mondays until it hits bottom on Fridays. This might give us a great strategy to buy on Friday before market close and sell on Monday at market open. In other words, buy low and sell high. The monthly component chart is very similar. We can observe that historically, TSLA seems to be at its highest valuations during January and then begins its descent. It tends to bottom out early in May before starting its rebound around October. It then rises until January, where it tops out, before biginning another slide down. We can buy TSLA in early March, when it is historically less valuable, and seel it in January when the stock historically hits its yearly peak. 
+As we can see from the charts, TSLA stock really spiked during and after 2020. Historically, we see that TSLA stock tends to increase during the weekend, and it slides beginning on Mondays until it hits bottom on Fridays. This might give us a great strategy to buy on Friday before market close and sell on Monday at market open. In other words, buy low and sell high. The monthly component chart is very similar. We can observe that historically, TSLA seems to be at its highest valuations during January and then begins its descent. It tends to bottom out early in May before starting its rebound around October. It then rises until January, where it tops out, before beginning another slide down. We can buy TSLA in early March, when it is historically less valuable, and sell it in January when the stock historically hits its yearly peak. 
 
 Step 10: Analyze the Double Moving Average Crossover (DMAC) Strategy:
 
