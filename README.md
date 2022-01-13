@@ -174,3 +174,32 @@ conda list pathlib
 ```
 
 ![pathlib List](images/pathlib_list.png)
+
+The next package to install is yfinance. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+
+```python
+pip install yfinance
+```
+
+Verify installation by running the following command in your terminal:
+
+```python
+conda list yfinance
+```
+
+![yfinance List](images/yfinance_list.png)
+
+The last package to install is backtrader. Run this command in your git terminal. Make sure you are in the development environment where you would like to install it:
+
+```python
+pip install backtrader
+```
+
+Verify installation by running the following command in your terminal:
+
+```python
+conda list backtrader
+```
+
+![backtrader List](images/backtrader_list.png)
+
