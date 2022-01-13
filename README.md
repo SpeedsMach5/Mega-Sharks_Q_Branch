@@ -307,3 +307,11 @@ For Tesla (TSLA), The Double Moving Average Crossover seems to be the best strat
 
 However, you need to run the program for each different ticker you want to evaluate. The reason for this is that some strategies work very well for some stocks, but not so well for others. We need to continue looking at algorithms until we find the one we want to deploy on certain stocks.
 
+---
+
+## Contributors
+
+**Conceptual Idea:** Quentin Reynolds<br>
+**Lead Integration Engineer:** Jacob Rougeau<br>
+**Lead Sentiment Analyst:** Emmanuel George<br>
+**Lead Strategy Analyst:** Tony Landero
