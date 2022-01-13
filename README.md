@@ -247,3 +247,8 @@ Step 6: Review the last 5 closes for the chosen ticker:
 
 As you can see from the dataframe. The last closing price for TSLA was on Jan. 12, 2022, and it was for the amount $1,106.22
 
+Step 7: Review forecasting dataframe for predicted closing prices:
+
+![Predicted Closes](images/predicted_closes.png)
+
+The yhat column states what we expect the closing price for TSLA to be on March 3, 2022. Notice that the predicted closing price is $1,086.40. This means that we expect TSLA to close about $20/share less than the closing price today. We expect TSLA to decline from its current value by March 3. This will be a great time to **short** this stock. 
