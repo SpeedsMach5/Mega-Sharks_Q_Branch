@@ -287,3 +287,11 @@ We backtested our strategy with a starting portfolio total of $100,000 and a sta
 
 If we would have applied this strategy starting in 2015, your portfolio would be worth $452,610.07. That is a return of 352%. Although this strategy resulted in great returns, they still pale in comparison with the DMAC strategy.
 
+Step 12: Analyze the EMA/SMA Crossover Strategy:
+
+![EMA/SMA Crossover Analysis](images/ema_sma_crossover.png)
+
+We backtested our strategy with a starting portfolio total of $100,000 and a stake size of 500 shares. This means that every time a signal is triggered we'll either buy or sell 500 shares of TSLA.
+
+If we would have applied this strategy starting in 2015, your portfolio would be worth $125,854. That is a return of 25%. Over the same 6 year period, this strategy failed to produce the same results that were produced with the DMAC, and MACD strategies. The DMAC Strategy still has the advantage. 
+
