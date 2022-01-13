@@ -229,7 +229,21 @@ Step 3: Select the number of prediction days you want to forecast:
 
 ![Prediction Days](images/prediction_days.png)
 
+For this example, we will predict 5 days.
+
 Step 4: Run Analysis:
 
 ![Run Analysis](images/run_analysis.png)
+
+Step 5: Summary of parameters:
+
+![Parameter Summary](images/parameter_summary.png)
+
+This is your opportunity to verify the options you made from the dropdown menus.
+
+Step 6: Review the last 5 closes for the chosen ticker:
+
+![Ticker Closes](images/ticker_closes.png)
+
+As you can see from the dataframe. The last closing price for TSLA was on Jan. 12, 2022, and it was for the amount $1,106.22
 
