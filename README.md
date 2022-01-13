@@ -268,3 +268,22 @@ Step 9: Review the separate component charts:
 ![FBProphet Components](images/fbprophet_components.png)
 
 As we can see from the charts, TSLA stock really spiked during and after 2020. Historically, we see that TSLA stock tends to increase during the weekend, and it slides beginning on Mondays until it hits bottom on Fridays. This might give us a great strategy to buy on Friday before market close and sell on Monday at market open. In other words, buy low and sell high. The monthly component chart is very similar. We can observe that historically, TSLA seems to be at its highest valuations during January and then begins its descent. It tends to bottom out early in May before starting its rebound around October. It then rises until January, where it tops out, before biginning another slide down. We can buy TSLA in early March, when it is historically less valuable, and seel it in January when the stock historically hits its yearly peak. 
+
+Step 10: Analyze the Double Moving Average Crossover (DMAC) Strategy:
+
+![DMAC Analysis](images/dmac_strategy.png)
+
+First, we see the chart showing the short sma, long sma, and closing prices, along with the entry/exit point signals. Any time the short sma crosses the long sma it triggers a signal. If the short sma crosses the long sma in an upward direction, we can expect closing prices to start trending higher. Conversely, if the short sma crosses the long sma in a downward direction, we can predict the closing prices to start trending lower. 
+
+We backtested our strategy with a starting portfolio total of $100,000 and a stake size of 500 shares. This means that every time a signal is triggered we'll either buy or sell 500 shares of TSLA.
+
+The results are unbelievable. With the DMAC strategy if we would applied it starting in 2015, your portfolio total would be $636,899.00 today. That is a gain of 536%. 
+
+Step 11: Analyze the Moving Average Convergence/Divergence Strategy:
+
+![MACD Analysis](images/macd_strategy.png)
+
+We backtested our strategy with a starting portfolio total of $100,000 and a stake size of 500 shares. This means that every time a signal is triggered we'll either buy or sell 500 shares of TSLA.
+
+If we would have applied this strategy starting in 2015, your portfolio would be worth $452,610.07. That is a return of 352%. Although this strategy resulted in great returns, they still pale in comparison with the DMAC strategy.
+
