@@ -203,3 +203,33 @@ conda list backtrader
 
 ![backtrader List](images/backtrader_list.png)
 
+---
+
+## Usage
+
+To use the 'Stock Forecaster and Strategy Analyzer' application, simply clone the repository and run **Streamlit.py** in your terminal. 
+
+You can also run the application by clicking on the following link:
+
+**[Streamlit.py](https://share.streamlit.io/speedsmach5/market_tools/main/Streamlit.py)**
+
+Step 1: Select the ticker you want to forecast and analyze:
+
+![Select Ticker](images/choose_ticker.png)
+
+For this explanation, we will be using Tesla (Ticker: TSLA)
+
+Step 2: Select the strategies you want to analyze:
+
+![Select Strategies](images/select_strategy.png)
+
+For this example, we will use all 4 strategies. (DMAC, MACD, EMA/SMA Crossover, Buy the Dip)
+
+Step 3: Select the number of prediction days you want to forecast:
+
+![Prediction Days](images/prediction_days.png)
+
+Step 4: Run Analysis:
+
+![Run Analysis](images/run_analysis.png)
+
