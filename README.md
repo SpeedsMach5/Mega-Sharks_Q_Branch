@@ -252,3 +252,13 @@ Step 7: Review forecasting dataframe for predicted closing prices:
 ![Predicted Closes](images/predicted_closes.png)
 
 The yhat column states what we expect the closing price for TSLA to be on March 3, 2022. Notice that the predicted closing price is $1,086.40. This means that we expect TSLA to close about $20/share less than the closing price today. We expect TSLA to decline from its current value by March 3. This will be a great time to **short** this stock. 
+
+Step 8: Review chart for the forecasted prices:
+
+![FBProphet Chart One](images/fbprophet_chart_one.png)
+
+In this chart, the solid blue line represents the yhat column, or the predicted closes for TSLA. The black dots represent the **actual** closing prices for the underlying security. 
+
+![FBProphet Zoomed Chart](images/fbprophet_chart_zoom.png)
+
+If we zoom in to the end of the predictions, we can see where we expect TSLA to be trading for the highlighted timeframe. 
