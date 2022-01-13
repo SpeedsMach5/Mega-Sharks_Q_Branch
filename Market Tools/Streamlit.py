@@ -8,7 +8,7 @@ import dmac_strategy
 import ema_sma_crossover_strategy as ema_sma
 import holoviews as hv
 import macd_strategy
-import matplotlib
+import matplotlib 
 import buy_the_dip_function as bd
 
 #CONFIGURATION
@@ -125,6 +125,8 @@ def display_ticker_data_section(tickers, start_date, end_date, tail_records=5):
 
 
 
+
+
 #@st.cache(suppress_st_warning=True)
 def display_forecasting_section(pricing_data, period):
     """Displays forecasting data
@@ -227,7 +229,7 @@ def display_strategy_section(selected_strategies, pricing_data):
         elif strategy == "Buy the Dip":
 
             # Creating Buy the Dip
-            st.write('__Buy The Dip __')            
+            st.write('__' + strategy + '__')            
             df, results, plot = bd.buy_the_dip(pricing_data)
             st.write(df.tail())
             
