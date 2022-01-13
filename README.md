@@ -315,3 +315,9 @@ However, you need to run the program for each different ticker you want to evalu
 **Lead Integration Engineer:** Jacob Rougeau<br>
 **Lead Sentiment Analyst:** Emmanuel George<br>
 **Lead Strategy Analyst:** Tony Landero
+
+---
+
+## License
+
+MIT
