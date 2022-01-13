@@ -262,3 +262,9 @@ In this chart, the solid blue line represents the yhat column, or the predicted 
 ![FBProphet Zoomed Chart](images/fbprophet_chart_zoom.png)
 
 If we zoom in to the end of the predictions, we can see where we expect TSLA to be trading for the highlighted timeframe. 
+
+Step 9: Review the separate component charts:
+
+![FBProphet Components](images/fbprophet_components.png)
+
+As we can see from the charts, TSLA stock really spiked during and after 2020. Historically, we see that TSLA stock tends to increase during the weekend, and it slides beginning on Mondays until it hits bottom on Fridays. This might give us a great strategy to buy on Friday before market close and sell on Monday at market open. In other words, buy low and sell high. The monthly component chart is very similar. We can observe that historically, TSLA seems to be at its highest valuations during January and then begins its descent. It tends to bottom out early in May before starting its rebound around October. It then rises until January, where it tops out, before biginning another slide down. We can buy TSLA in early March, when it is historically less valuable, and seel it in January when the stock historically hits its yearly peak. 
